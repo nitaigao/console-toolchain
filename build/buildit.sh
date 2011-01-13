@@ -252,8 +252,7 @@ buildgcc() {
 			--disable-threads \
 			--disable-libgomp \
 			--disable-shared \
-      --disable-decimal-float \
-			--with-newlib \
+      			--disable-decimal-float \
 			--enable-languages="c,c++" \
 			--enable-checking=release \
 			--prefix=$PS3DEV/$FOLDER \
@@ -298,6 +297,8 @@ buildi686() {
 	buildgcc $I686_TARGET i686
 	echo "******* Building i686 Newlib"
 	buildnewlib $I686_TARGET $I686_NEWLIB_TARGET i686
+	echo "******* Building i686 CRT"
+	buildcrt $I686_TARGET i686
 	echo "******* Building i686 GCC"
 	continuegcc $I686_TARGET
 	echo "******* Building i686 GDB"
