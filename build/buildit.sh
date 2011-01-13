@@ -228,13 +228,11 @@ buildcrt() {
 	FOLDER=$2
 	(
 		cd $PS3DEV/build_crt && \
-		$PS3DEV/$FOLDER/bin/$TARGET-gcc -c $PS3DEV/$CRT_DIR/$TARGET/crti.S -o crti.o && \
-		$PS3DEV/$FOLDER/bin/$TARGET-gcc -c $PS3DEV/$CRT_DIR/$TARGET/crtn.S -o crtn.o && \
 		$PS3DEV/$FOLDER/bin/$TARGET-gcc -c $PS3DEV/$CRT_DIR/$TARGET/crt0.S -o crt0.o && \
 		$PS3DEV/$FOLDER/bin/$TARGET-gcc -c $PS3DEV/$CRT_DIR/$TARGET/crt1.c -o crt.o && \
 		$PS3DEV/$FOLDER/bin/$TARGET-ld -r crt0.o crt.o -o crt1.o && \
 		mkdir -p $PS3DEV/$FOLDER/$TARGET/lib && \
-		cp crti.o crtn.o crt0.o crt1.o $PS3DEV/$FOLDER/$TARGET/lib/ && \
+		cp crt0.o crt1.o $PS3DEV/$FOLDER/$TARGET/lib/ && \
 		mkdir -p $PS3DEV/$FOLDER/$TARGET/include && \
 		cp $PS3DEV/$CRT_DIR/fenv.h $PS3DEV/$FOLDER/$TARGET/include/
 	) || die "Error building crt for target $TARGET"
@@ -311,7 +309,7 @@ if [ -z "$PS3DEV" ]; then
 fi
 
 if [ $# -eq 0 ]; then
-	die "Please specify build type(s) (all/ppu/spu/i686/clean)"
+	buildi686
 fi
 
 if [ "$BUILDTYPE" = "clean" ]; then
@@ -331,26 +329,9 @@ download "$NEWLIB_URI" "$NEWLIB_TARBALL"
 download "$GDB_URI" "$GDB_TARBALL"
 
 if [ "$1" = "all" ]; then
-	buildppu
-	buildspu
 	cleanbuild
 	cleansrc
 	exit 0
 fi
 
-while true; do
-	if [ $# -eq 0 ]; then
-		exit 0
-	fi
-	case $1 in
-		ppu)		buildppu ;;
-		spu)		buildspu ;;
-		i686)		buildi686 ;;
-		clean)		cleanbuild; cleansrc; exit 0 ;;
-		*)
-			die "Unknown build type $1"
-			;;
-	esac
-	shift;
-done
 
