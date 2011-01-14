@@ -1,0 +1,1 @@
+cmd_/opt/i586-elf//include/rdma/.install := perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/rdma /opt/i586-elf//include/rdma x86 ib_user_mad.h; perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/rdma /opt/i586-elf//include/rdma x86 ; touch /opt/i586-elf//include/rdma/.install

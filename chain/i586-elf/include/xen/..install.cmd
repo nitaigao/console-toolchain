@@ -1,0 +1,1 @@
+cmd_/opt/i586-elf//include/xen/.install := perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/xen /opt/i586-elf//include/xen x86 evtchn.h privcmd.h; perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/xen /opt/i586-elf//include/xen x86 ; touch /opt/i586-elf//include/xen/.install

@@ -1,0 +1,1 @@
+cmd_/opt/i586-elf//include/linux/wimax/.install := perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/linux/wimax /opt/i586-elf//include/linux/wimax x86 i2400m.h; perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/linux/wimax /opt/i586-elf//include/linux/wimax x86 ; touch /opt/i586-elf//include/linux/wimax/.install

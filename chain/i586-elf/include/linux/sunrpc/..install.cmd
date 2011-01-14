@@ -1,0 +1,1 @@
+cmd_/opt/i586-elf//include/linux/sunrpc/.install := perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/linux/sunrpc /opt/i586-elf//include/linux/sunrpc x86 debug.h; perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/linux/sunrpc /opt/i586-elf//include/linux/sunrpc x86 ; touch /opt/i586-elf//include/linux/sunrpc/.install

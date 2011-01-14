@@ -1,0 +1,1 @@
+cmd_/opt/i586-elf//include/linux/hdlc/.install := perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/linux/hdlc /opt/i586-elf//include/linux/hdlc x86 ioctl.h; perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/linux/hdlc /opt/i586-elf//include/linux/hdlc x86 ; touch /opt/i586-elf//include/linux/hdlc/.install

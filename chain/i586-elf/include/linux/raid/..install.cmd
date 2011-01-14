@@ -1,0 +1,1 @@
+cmd_/opt/i586-elf//include/linux/raid/.install := perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/linux/raid /opt/i586-elf//include/linux/raid x86 md_p.h md_u.h; perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/linux/raid /opt/i586-elf//include/linux/raid x86 ; touch /opt/i586-elf//include/linux/raid/.install

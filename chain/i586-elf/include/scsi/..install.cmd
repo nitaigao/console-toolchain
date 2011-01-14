@@ -1,0 +1,1 @@
+cmd_/opt/i586-elf//include/scsi/.install := perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/scsi /opt/i586-elf//include/scsi x86 scsi_bsg_fc.h scsi_netlink.h scsi_netlink_fc.h; perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/scsi /opt/i586-elf//include/scsi x86 ; touch /opt/i586-elf//include/scsi/.install

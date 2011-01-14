@@ -1,0 +1,1 @@
+cmd_/opt/i586-elf//include/scsi/fc/.install := perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/scsi/fc /opt/i586-elf//include/scsi/fc x86 fc_els.h fc_fs.h fc_gs.h fc_ns.h; perl scripts/headers_install.pl /Users/nk/Development/cross/linux-2.6.37/include/scsi/fc /opt/i586-elf//include/scsi/fc x86 ; touch /opt/i586-elf//include/scsi/fc/.install
